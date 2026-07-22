@@ -2,60 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>VoidedClient - Advanced Minecraft Client</title>
-    <link rel="stylesheet" href="styles.css?v2">
+    <title>VoidedClient - Fabric 1.21.11 Minecraft Client</title>
+    <link rel="stylesheet" href="styles.css?v3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Autoplay Audio Element -->
-    <audio id="bgAudio" loop muted></audio>
+    <audio id="bgAudio" loop muted playsinline></audio>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-cube"></i> <span class="logo-text">VoidedClient</span>
+                <i class="fas fa-cube"></i> 
+                <span class="logo-text">VoidedClient</span>
+                <span class="version-badge">1.21.11</span>
             </div>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#mods">Modules</a></li>
-                <li><a href="#download">Download</a></li>
+                <li><a href="#home" data-link>Home</a></li>
+                <li><a href="#features" data-link>Features</a></li>
+                <li><a href="#mods" data-link>Modules</a></li>
+                <li><a href="#download" data-link>Download</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="stars"></div>
         <div class="hero-content">
-            <div class="hero-icon"><i class="fas fa-gamepad"></i></div>
+            <div class="hero-icon"><i class="fas fa-cube"></i></div>
             <h1>VoidedClient</h1>
-            <p>Advanced Minecraft Client</p>
-            <p class="subtitle">28 Powerful Modules • Click GUI • Minecraft 1.8.9</p>
+            <p class="tagline">Fabric 1.21.11</p>
+            <p class="subtitle">Advanced Minecraft Client • 28 Powerful Modules • Click GUI</p>
             <div class="cta-buttons">
-                <a href="#download" class="btn btn-primary">
-                    <i class="fas fa-download"></i> <span>Download</span>
+                <a href="#download" class="btn btn-primary" data-link>
+                    <i class="fas fa-download"></i> <span>Download Now</span>
                 </a>
                 <a href="https://discord.gg/7M2cx5hzwg" class="btn btn-secondary" target="_blank">
-                    <i class="fab fa-discord"></i> <span>Discord</span>
+                    <i class="fab fa-discord"></i> <span>Join Discord</span>
                 </a>
+            </div>
+            <div class="version-info-hero">
+                <span class="info-badge"><i class="fas fa-cubes"></i> Minecraft 1.21.11</span>
+                <span class="info-badge"><i class="fas fa-layer-group"></i> Fabric</span>
+                <span class="info-badge"><i class="fas fa-check-circle"></i> Latest</span>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- Quick Stats Section -->
     <section class="stats-section">
         <div class="container">
             <div class="stat-box animate-on-scroll">
                 <div class="stat-number">28</div>
-                <div class="stat-label">Total Modules</div>
+                <div class="stat-label">Modules</div>
             </div>
             <div class="stat-box animate-on-scroll">
                 <div class="stat-number">6</div>
@@ -75,27 +86,37 @@
     <!-- Features Section -->
     <section id="features" class="features-section">
         <div class="container">
-            <h2>Core Features</h2>
+            <h2>Why Choose VoidedClient?</h2>
             <div class="features-grid">
                 <div class="feature-card animate-on-scroll">
-                    <i class="fas fa-mouse-pointer"></i>
-                    <h3>Click GUI</h3>
-                    <p>Drag-and-drop interface for managing all modules</p>
+                    <div class="feature-icon"><i class="fas fa-mouse-pointer"></i></div>
+                    <h3>Advanced Click GUI</h3>
+                    <p>Drag-and-drop interface for effortless module management</p>
                 </div>
                 <div class="feature-card animate-on-scroll">
-                    <i class="fas fa-sliders-h"></i>
-                    <h3>HUD Editor</h3>
-                    <p>Customize and arrange your HUD elements</p>
+                    <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>28 Modules</h3>
+                    <p>Combat, Render, Movement, Player, Client & Misc</p>
                 </div>
                 <div class="feature-card animate-on-scroll">
-                    <i class="fas fa-cog"></i>
-                    <h3>Full Config</h3>
-                    <p>Extensive settings for every module</p>
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimized performance for competitive gameplay</p>
                 </div>
                 <div class="feature-card animate-on-scroll">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Low Latency</h3>
-                    <p>Optimized for maximum performance</p>
+                    <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3>Full Customization</h3>
+                    <p>Configure every aspect to your playstyle</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Latest Version</h3>
+                    <p>Built for Minecraft 1.21.11 Fabric</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Active Community</h3>
+                    <p>Join thousands in our Discord server</p>
                 </div>
             </div>
         </div>
@@ -107,75 +128,187 @@
             <h2>28 Modules</h2>
             <div class="mods-tabs">
                 <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="combat">Combat (6)</button>
-                    <button class="tab-btn" data-tab="render">Render (8)</button>
-                    <button class="tab-btn" data-tab="movement">Movement (8)</button>
-                    <button class="tab-btn" data-tab="player">Player (3)</button>
-                    <button class="tab-btn" data-tab="client">Client (2)</button>
-                    <button class="tab-btn" data-tab="misc">Misc (1)</button>
+                    <button class="tab-btn active" data-tab="combat"><i class="fas fa-fist-raised"></i> Combat (6)</button>
+                    <button class="tab-btn" data-tab="render"><i class="fas fa-eye"></i> Render (8)</button>
+                    <button class="tab-btn" data-tab="movement"><i class="fas fa-running"></i> Movement (8)</button>
+                    <button class="tab-btn" data-tab="player"><i class="fas fa-user"></i> Player (3)</button>
+                    <button class="tab-btn" data-tab="client"><i class="fas fa-cogs"></i> Client (2)</button>
+                    <button class="tab-btn" data-tab="misc"><i class="fas fa-star"></i> Misc (1)</button>
                 </div>
 
-                <!-- Combat -->
+                <!-- Combat Modules -->
                 <div class="tab-content active" id="combat-tab">
                     <div class="mods-grid">
-                        <div class="mod-item"><div class="mod-name">AutoTotem</div><div class="mod-desc">Auto equips totem when in danger</div></div>
-                        <div class="mod-item"><div class="mod-name">Criticals</div><div class="mod-desc">Enhanced critical hit detection</div></div>
-                        <div class="mod-item"><div class="mod-name">FightBot</div><div class="mod-desc">Automatic combat assistance</div></div>
-                        <div class="mod-item"><div class="mod-name">KeyPearl</div><div class="mod-desc">Auto throws enderpearls</div></div>
-                        <div class="mod-item"><div class="mod-name">KillAura</div><div class="mod-desc">Automatic targeting and attacking</div></div>
-                        <div class="mod-item"><div class="mod-name">Velocity</div><div class="mod-desc">Reduces incoming knockback</div></div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="mod-name">AutoTotem</div>
+                            <div class="mod-desc">Automatically equips totem when in danger</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-star"></i></div>
+                            <div class="mod-name">Criticals</div>
+                            <div class="mod-desc">Enhanced critical hit mechanics</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-robot"></i></div>
+                            <div class="mod-name">FightBot</div>
+                            <div class="mod-desc">Automatic combat assistance system</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-cube"></i></div>
+                            <div class="mod-name">KeyPearl</div>
+                            <div class="mod-desc">Auto throws enderpearls on keypress</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-crosshairs"></i></div>
+                            <div class="mod-name">KillAura</div>
+                            <div class="mod-desc">Automatic targeting and attacking</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-wind"></i></div>
+                            <div class="mod-name">Velocity</div>
+                            <div class="mod-desc">Reduces incoming knockback damage</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Render -->
+                <!-- Render Modules -->
                 <div class="tab-content" id="render-tab">
                     <div class="mods-grid">
-                        <div class="mod-item"><div class="mod-name">ArmorHUD</div><div class="mod-desc">Display armor durability</div></div>
-                        <div class="mod-item"><div class="mod-name">BlockHighlight</div><div class="mod-desc">Highlights targeted blocks</div></div>
-                        <div class="mod-item"><div class="mod-name">Chams</div><div class="mod-desc">Colored player models</div></div>
-                        <div class="mod-item"><div class="mod-name">CustomNameTags</div><div class="mod-desc">Customize name tag appearance</div></div>
-                        <div class="mod-item"><div class="mod-name">DonutMinesESP</div><div class="mod-desc">Tracks nearby mines</div></div>
-                        <div class="mod-item"><div class="mod-name">FullBright</div><div class="mod-desc">Maximum brightness vision</div></div>
-                        <div class="mod-item"><div class="mod-name">HitPartials</div><div class="mod-desc">Shows hit damage on players</div></div>
-                        <div class="mod-item"><div class="mod-name">NoRender</div><div class="mod-desc">Disables unnecessary rendering</div></div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-shirt"></i></div>
+                            <div class="mod-name">ArmorHUD</div>
+                            <div class="mod-desc">Display armor durability on HUD</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-square"></i></div>
+                            <div class="mod-name">BlockHighlight</div>
+                            <div class="mod-desc">Highlights targeted blocks clearly</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-user-ninja"></i></div>
+                            <div class="mod-name">Chams</div>
+                            <div class="mod-desc">Colored player models visibility</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-tag"></i></div>
+                            <div class="mod-name">CustomNameTags</div>
+                            <div class="mod-desc">Customize player name tag appearance</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-diamond"></i></div>
+                            <div class="mod-name">DonutMinesESP</div>
+                            <div class="mod-desc">Tracks and highlights nearby ores</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-sun"></i></div>
+                            <div class="mod-name">FullBright</div>
+                            <div class="mod-desc">Maximum brightness vision mode</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-explosion"></i></div>
+                            <div class="mod-name">HitPartials</div>
+                            <div class="mod-desc">Shows hit damage indicators</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-eye-slash"></i></div>
+                            <div class="mod-name">NoRender</div>
+                            <div class="mod-desc">Disables unnecessary rendering</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Movement -->
+                <!-- Movement Modules -->
                 <div class="tab-content" id="movement-tab">
                     <div class="mods-grid">
-                        <div class="mod-item"><div class="mod-name">Fly</div><div class="mod-desc">Flight mode with speed options</div></div>
-                        <div class="mod-item"><div class="mod-name">InfiniteJump</div><div class="mod-desc">Jump without landing</div></div>
-                        <div class="mod-item"><div class="mod-name">LongJump</div><div class="mod-desc">Jump much longer distances</div></div>
-                        <div class="mod-item"><div class="mod-name">Parkour</div><div class="mod-desc">Enhanced parkour abilities</div></div>
-                        <div class="mod-item"><div class="mod-name">ReverseStep</div><div class="mod-desc">Step down blocks automatically</div></div>
-                        <div class="mod-item"><div class="mod-name">Speed</div><div class="mod-desc">Increased movement speed</div></div>
-                        <div class="mod-item"><div class="mod-name">Sprint</div><div class="mod-desc">Automatic continuous sprint</div></div>
-                        <div class="mod-item"><div class="mod-name">Step</div><div class="mod-desc">Automatically walk up blocks</div></div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-feather"></i></div>
+                            <div class="mod-name">Fly</div>
+                            <div class="mod-desc">Flight mode with speed customization</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-arrow-up"></i></div>
+                            <div class="mod-name">InfiniteJump</div>
+                            <div class="mod-desc">Jump repeatedly without landing</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-shoe-prints"></i></div>
+                            <div class="mod-name">LongJump</div>
+                            <div class="mod-desc">Jump much longer distances</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-mountain"></i></div>
+                            <div class="mod-name">Parkour</div>
+                            <div class="mod-desc">Enhanced parkour movement abilities</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-arrow-down"></i></div>
+                            <div class="mod-name">ReverseStep</div>
+                            <div class="mod-desc">Step down blocks automatically</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="mod-name">Speed</div>
+                            <div class="mod-desc">Increased movement speed boost</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="mod-name">Sprint</div>
+                            <div class="mod-desc">Automatic continuous sprinting</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-stairs"></i></div>
+                            <div class="mod-name">Step</div>
+                            <div class="mod-desc">Automatically walk up blocks</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Player -->
+                <!-- Player Modules -->
                 <div class="tab-content" id="player-tab">
                     <div class="mods-grid">
-                        <div class="mod-item"><div class="mod-name">FastPlace</div><div class="mod-desc">Place blocks faster</div></div>
-                        <div class="mod-item"><div class="mod-name">NoFall</div><div class="mod-desc">Prevents fall damage</div></div>
-                        <div class="mod-item"><div class="mod-name">Velocity</div><div class="mod-desc">Reduces knockback effects</div></div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-hand-paper"></i></div>
+                            <div class="mod-name">FastPlace</div>
+                            <div class="mod-desc">Place blocks at lightning speed</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-shield"></i></div>
+                            <div class="mod-name">NoFall</div>
+                            <div class="mod-desc">Prevents all fall damage</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-wind"></i></div>
+                            <div class="mod-name">Velocity</div>
+                            <div class="mod-desc">Reduces knockback effects</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Client -->
+                <!-- Client Modules -->
                 <div class="tab-content" id="client-tab">
                     <div class="mods-grid">
-                        <div class="mod-item"><div class="mod-name">ClickGui</div><div class="mod-desc">Main GUI interface</div></div>
-                        <div class="mod-item"><div class="mod-name">HudEditor</div><div class="mod-desc">Customize HUD elements</div></div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-mouse"></i></div>
+                            <div class="mod-name">ClickGui</div>
+                            <div class="mod-desc">Advanced drag-and-drop interface</div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-sliders-h"></i></div>
+                            <div class="mod-name">HudEditor</div>
+                            <div class="mod-desc">Customize and arrange HUD elements</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Misc -->
+                <!-- Misc Modules -->
                 <div class="tab-content" id="misc-tab">
                     <div class="mods-grid">
-                        <div class="mod-item"><div class="mod-name">AntiAFK</div><div class="mod-desc">Prevents AFK kick</div></div>
+                        <div class="mod-item">
+                            <div class="mod-icon"><i class="fas fa-user-clock"></i></div>
+                            <div class="mod-name">AntiAFK</div>
+                            <div class="mod-desc">Prevents AFK timeout kicks</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -185,22 +318,59 @@
     <!-- Download Section -->
     <section id="download" class="download-section">
         <div class="container">
-            <h2>Download</h2>
-            <div class="download-card animate-on-scroll">
-                <h3>Latest Version</h3>
-                <div class="version-info">v2.5.0</div>
-                <div class="version-sub">Minecraft 1.8.9</div>
-                <div class="mod-count">28 Modules • Click GUI • HUD Editor</div>
-                <a href="https://discord.gg/7M2cx5hzwg" class="btn btn-primary" target="_blank">
-                    <i class="fab fa-discord"></i> Get Download Link
-                </a>
+            <h2>Get VoidedClient</h2>
+            <div class="download-cards">
+                <div class="download-card animate-on-scroll">
+                    <div class="download-header">
+                        <i class="fas fa-fire"></i>
+                        <h3>Latest Version</h3>
+                    </div>
+                    <div class="version-badge-large">v3.0.0</div>
+                    <div class="version-info">
+                        <div class="info-row">
+                            <span><i class="fas fa-cubes"></i> Minecraft</span>
+                            <span class="highlight">1.21.11</span>
+                        </div>
+                        <div class="info-row">
+                            <span><i class="fas fa-layer-group"></i> Loader</span>
+                            <span class="highlight">Fabric</span>
+                        </div>
+                        <div class="info-row">
+                            <span><i class="fas fa-star"></i> Modules</span>
+                            <span class="highlight">28 Total</span>
+                        </div>
+                    </div>
+                    <a href="https://discord.gg/7M2cx5hzwg" class="btn btn-primary btn-large" target="_blank">
+                        <i class="fab fa-discord"></i> Download on Discord
+                    </a>
+                    <p class="disclaimer">Free • Open Source • Active Development</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 VoidedClient. Advanced Minecraft Client</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>VoidedClient</h4>
+                <p>Advanced Minecraft Client for Fabric 1.21.11</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="https://discord.gg/7M2cx5hzwg" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+                    <li><a href="#home" data-link><i class="fas fa-home"></i> Home</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Community</h4>
+                <p>Join thousands of players improving their gameplay</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 VoidedClient. Minecraft is &reg; Mojang Studios.</p>
+        </div>
     </footer>
 
     <!-- Music Control -->
@@ -208,6 +378,6 @@
         <i class="fas fa-volume-up"></i>
     </div>
 
-    <script src="script.js?v2"></script>
+    <script src="script.js?v3"></script>
 </body>
 </html>
