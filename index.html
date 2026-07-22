@@ -3,30 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VoidedClient MC - Community Hub</title>
+    <title>VoidedClient - Advanced Minecraft Client</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Hidden Audio Player for Background Music -->
-    <audio id="bgMusic" loop>
-        <source src="https://www.youtube.com/embed/hXCIH5VTWyg" type="audio/mpeg">
-    </audio>
-
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-gamepad"></i> <span class="logo-text">VoidedClient MC</span>
+                <i class="fas fa-cube"></i> <span class="logo-text">VoidedClient</span>
             </div>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#music">Music</a></li>
-                <li><a href="#social">Social</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#mods">Modules</a></li>
+                <li><a href="#download">Download</a></li>
             </ul>
         </div>
     </nav>
@@ -34,76 +29,164 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>VoidedClient MC</h1>
-            <p>Join Our Community</p>
+            <div class="hero-icon"><i class="fas fa-gamepad"></i></div>
+            <h1>VoidedClient</h1>
+            <p>Advanced Minecraft Client</p>
+            <p class="subtitle">28 Powerful Modules • Click GUI • Minecraft 1.8.9</p>
             <div class="cta-buttons">
+                <a href="#download" class="btn btn-primary">
+                    <i class="fas fa-download"></i> <span>Download</span>
+                </a>
+                <a href="https://discord.gg/7M2cx5hzwg" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-discord"></i> <span>Discord</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stat-box animate-on-scroll">
+                <div class="stat-number">28</div>
+                <div class="stat-label">Total Modules</div>
+            </div>
+            <div class="stat-box animate-on-scroll">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Combat</div>
+            </div>
+            <div class="stat-box animate-on-scroll">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Render</div>
+            </div>
+            <div class="stat-box animate-on-scroll">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Movement</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <h3>Click GUI</h3>
+                    <p>Drag-and-drop interface for managing all modules</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-sliders-h"></i>
+                    <h3>HUD Editor</h3>
+                    <p>Customize and arrange your HUD elements</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-cog"></i>
+                    <h3>Full Config</h3>
+                    <p>Extensive settings for every module</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Low Latency</h3>
+                    <p>Optimized for maximum performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="mods" class="mods-section">
+        <div class="container">
+            <h2>28 Modules</h2>
+            <div class="mods-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="combat">Combat (6)</button>
+                    <button class="tab-btn" data-tab="render">Render (8)</button>
+                    <button class="tab-btn" data-tab="movement">Movement (8)</button>
+                    <button class="tab-btn" data-tab="player">Player (3)</button>
+                    <button class="tab-btn" data-tab="client">Client (2)</button>
+                    <button class="tab-btn" data-tab="misc">Misc (1)</button>
+                </div>
+
+                <!-- Combat -->
+                <div class="tab-content active" id="combat-tab">
+                    <div class="mods-grid">
+                        <div class="mod-item"><div class="mod-name">AutoTotem</div><div class="mod-desc">Auto equips totem when in danger</div></div>
+                        <div class="mod-item"><div class="mod-name">Criticals</div><div class="mod-desc">Enhanced critical hit detection</div></div>
+                        <div class="mod-item"><div class="mod-name">FightBot</div><div class="mod-desc">Automatic combat assistance</div></div>
+                        <div class="mod-item"><div class="mod-name">KeyPearl</div><div class="mod-desc">Auto throws enderpearls</div></div>
+                        <div class="mod-item"><div class="mod-name">KillAura</div><div class="mod-desc">Automatic targeting and attacking</div></div>
+                        <div class="mod-item"><div class="mod-name">Velocity</div><div class="mod-desc">Reduces incoming knockback</div></div>
+                    </div>
+                </div>
+
+                <!-- Render -->
+                <div class="tab-content" id="render-tab">
+                    <div class="mods-grid">
+                        <div class="mod-item"><div class="mod-name">ArmorHUD</div><div class="mod-desc">Display armor durability</div></div>
+                        <div class="mod-item"><div class="mod-name">BlockHighlight</div><div class="mod-desc">Highlights targeted blocks</div></div>
+                        <div class="mod-item"><div class="mod-name">Chams</div><div class="mod-desc">Colored player models</div></div>
+                        <div class="mod-item"><div class="mod-name">CustomNameTags</div><div class="mod-desc">Customize name tag appearance</div></div>
+                        <div class="mod-item"><div class="mod-name">DonutMinesESP</div><div class="mod-desc">Tracks nearby mines</div></div>
+                        <div class="mod-item"><div class="mod-name">FullBright</div><div class="mod-desc">Maximum brightness vision</div></div>
+                        <div class="mod-item"><div class="mod-name">HitPartials</div><div class="mod-desc">Shows hit damage on players</div></div>
+                        <div class="mod-item"><div class="mod-name">NoRender</div><div class="mod-desc">Disables unnecessary rendering</div></div>
+                    </div>
+                </div>
+
+                <!-- Movement -->
+                <div class="tab-content" id="movement-tab">
+                    <div class="mods-grid">
+                        <div class="mod-item"><div class="mod-name">Fly</div><div class="mod-desc">Flight mode with speed options</div></div>
+                        <div class="mod-item"><div class="mod-name">InfiniteJump</div><div class="mod-desc">Jump without landing</div></div>
+                        <div class="mod-item"><div class="mod-name">LongJump</div><div class="mod-desc">Jump much longer distances</div></div>
+                        <div class="mod-item"><div class="mod-name">Parkour</div><div class="mod-desc">Enhanced parkour abilities</div></div>
+                        <div class="mod-item"><div class="mod-name">ReverseStep</div><div class="mod-desc">Step down blocks automatically</div></div>
+                        <div class="mod-item"><div class="mod-name">Speed</div><div class="mod-desc">Increased movement speed</div></div>
+                        <div class="mod-item"><div class="mod-name">Sprint</div><div class="mod-desc">Automatic continuous sprint</div></div>
+                        <div class="mod-item"><div class="mod-name">Step</div><div class="mod-desc">Automatically walk up blocks</div></div>
+                    </div>
+                </div>
+
+                <!-- Player -->
+                <div class="tab-content" id="player-tab">
+                    <div class="mods-grid">
+                        <div class="mod-item"><div class="mod-name">FastPlace</div><div class="mod-desc">Place blocks faster</div></div>
+                        <div class="mod-item"><div class="mod-name">NoFall</div><div class="mod-desc">Prevents fall damage</div></div>
+                        <div class="mod-item"><div class="mod-name">Velocity</div><div class="mod-desc">Reduces knockback effects</div></div>
+                    </div>
+                </div>
+
+                <!-- Client -->
+                <div class="tab-content" id="client-tab">
+                    <div class="mods-grid">
+                        <div class="mod-item"><div class="mod-name">ClickGui</div><div class="mod-desc">Main GUI interface</div></div>
+                        <div class="mod-item"><div class="mod-name">HudEditor</div><div class="mod-desc">Customize HUD elements</div></div>
+                    </div>
+                </div>
+
+                <!-- Misc -->
+                <div class="tab-content" id="misc-tab">
+                    <div class="mods-grid">
+                        <div class="mod-item"><div class="mod-name">AntiAFK</div><div class="mod-desc">Prevents AFK kick</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <h2>Download</h2>
+            <div class="download-card animate-on-scroll">
+                <h3>Latest Version</h3>
+                <div class="version-info">v2.5.0</div>
+                <div class="version-sub">Minecraft 1.8.9</div>
+                <div class="mod-count">28 Modules • Click GUI • HUD Editor</div>
                 <a href="https://discord.gg/7M2cx5hzwg" class="btn btn-primary" target="_blank">
-                    <i class="fab fa-discord"></i> <span>Join Discord</span>
-                </a>
-                <a href="https://youtube.com/@voidedclientmc?si=7aqZs0it9PKaNcxY" class="btn btn-secondary" target="_blank">
-                    <i class="fab fa-youtube"></i> <span>Subscribe</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>Welcome to VoidedClient MC, your premier destination for Minecraft gaming and community. We're dedicated to bringing gamers together through shared passion, epic gameplay, and amazing content on YouTube and Discord.</p>
-            <div class="features">
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Community Driven</h3>
-                    <p>Connect with thousands of players in our thriving Discord community.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-video"></i>
-                    <h3>Fresh Content</h3>
-                    <p>Watch epic Minecraft gameplay and tutorials on our YouTube channel.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-music"></i>
-                    <h3>Amazing Vibes</h3>
-                    <p>Experience the perfect gaming atmosphere with curated music.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Music Section -->
-    <section id="music" class="music">
-        <div class="container">
-            <h2>Featured Music</h2>
-            <p>Enjoy "Misery by Pupsies" while you explore - Looping</p>
-            <div class="music-player">
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/hXCIH5VTWyg?autoplay=1&loop=1&playlist=hXCIH5VTWyg" title="Music Player - Misery by Pupsies" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p class="music-note">🎵 "Misery" by Pupsies - Looping on startup</p>
-        </div>
-    </section>
-
-    <!-- Social Links Section -->
-    <section id="social" class="social">
-        <div class="container">
-            <h2>Stay Connected</h2>
-            <div class="social-links">
-                <a href="https://discord.gg/7M2cx5hzwg" class="social-btn discord" target="_blank" title="Join Discord">
-                    <i class="fab fa-discord"></i>
-                    <span>Discord</span>
-                </a>
-                <a href="https://youtube.com/@voidedclientmc?si=7aqZs0it9PKaNcxY" class="social-btn youtube" target="_blank" title="Subscribe on YouTube">
-                    <i class="fab fa-youtube"></i>
-                    <span>YouTube</span>
-                </a>
-                <a href="https://twitter.com" class="social-btn twitter" target="_blank" title="Follow on Twitter">
-                    <i class="fab fa-twitter"></i>
-                    <span>Twitter</span>
-                </a>
-                <a href="https://twitch.tv" class="social-btn twitch" target="_blank" title="Follow on Twitch">
-                    <i class="fab fa-twitch"></i>
-                    <span>Twitch</span>
+                    <i class="fab fa-discord"></i> Get Download Link
                 </a>
             </div>
         </div>
@@ -111,15 +194,12 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 VoidedClient MC. All rights reserved.</p>
-            <p>Made with <i class="fas fa-heart"></i> for the community</p>
-        </div>
+        <p>&copy; 2026 VoidedClient. Advanced Minecraft Client</p>
     </footer>
 
-    <!-- Music Control Button (Hidden) -->
+    <!-- Music Control -->
     <div class="music-control" id="musicControl" title="Toggle Music">
-        <i class="fas fa-volume-mute"></i>
+        <i class="fas fa-volume-up"></i>
     </div>
 
     <script src="script.js"></script>
