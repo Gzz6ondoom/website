@@ -8,13 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Hidden Audio Player for Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.youtube.com/embed/hXCIH5VTWyg" type="audio/mpeg">
+    </audio>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-gamepad"></i> VoidedClient MC
+                <i class="fas fa-gamepad"></i> <span class="logo-text">VoidedClient MC</span>
             </div>
-            <ul class="nav-links">
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#music">Music</a></li>
@@ -30,10 +38,10 @@
             <p>Join Our Community</p>
             <div class="cta-buttons">
                 <a href="https://discord.gg/7M2cx5hzwg" class="btn btn-primary" target="_blank">
-                    <i class="fab fa-discord"></i> Join Discord
+                    <i class="fab fa-discord"></i> <span>Join Discord</span>
                 </a>
                 <a href="https://youtube.com/@voidedclientmc?si=7aqZs0it9PKaNcxY" class="btn btn-secondary" target="_blank">
-                    <i class="fab fa-youtube"></i> Subscribe
+                    <i class="fab fa-youtube"></i> <span>Subscribe</span>
                 </a>
             </div>
         </div>
@@ -108,6 +116,11 @@
             <p>Made with <i class="fas fa-heart"></i> for the community</p>
         </div>
     </footer>
+
+    <!-- Music Control Button (Hidden) -->
+    <div class="music-control" id="musicControl" title="Toggle Music">
+        <i class="fas fa-volume-mute"></i>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -13,6 +13,10 @@
     --border-color: #333333;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -47,6 +51,20 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
+}
+
+.logo-text {
+    display: inline-block;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    z-index: 1001;
 }
 
 .nav-links {
@@ -60,6 +78,7 @@ body {
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
+    font-weight: 500;
 }
 
 .nav-links a:hover {
@@ -90,6 +109,7 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    padding: 2rem;
 }
 
 .hero::before {
@@ -125,6 +145,7 @@ body {
     text-align: center;
     z-index: 1;
     animation: slideUp 0.8s ease-out;
+    max-width: 100%;
 }
 
 @keyframes slideUp {
@@ -143,6 +164,7 @@ body {
     color: var(--primary-color);
     margin-bottom: 1rem;
     text-shadow: 0 0 20px rgba(220, 20, 60, 0.5);
+    word-wrap: break-word;
 }
 
 .hero p {
@@ -169,6 +191,7 @@ body {
     gap: 0.5rem;
     cursor: pointer;
     border: 2px solid transparent;
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -203,7 +226,7 @@ body {
 
 /* About Section */
 .about {
-    padding: 5rem 0;
+    padding: 5rem 2rem;
     background: linear-gradient(135deg, var(--light-bg) 0%, #0f0f1e 100%);
 }
 
@@ -223,7 +246,7 @@ body {
 
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -256,11 +279,12 @@ body {
 
 .feature-card p {
     color: #aaa;
+    font-size: 0.95rem;
 }
 
 /* Music Section */
 .music {
-    padding: 5rem 0;
+    padding: 5rem 2rem;
     background: linear-gradient(135deg, var(--secondary-color) 0%, #1a1a1e 100%);
 }
 
@@ -275,6 +299,7 @@ body {
     text-align: center;
     color: #aaa;
     margin-bottom: 2rem;
+    font-size: 1rem;
 }
 
 .music-player {
@@ -284,18 +309,24 @@ body {
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(220, 20, 60, 0.3);
     border: 2px solid var(--primary-color);
+    aspect-ratio: 16/9;
+}
+
+.music-player iframe {
+    width: 100%;
+    height: 100%;
 }
 
 .music-note {
     text-align: center;
     color: var(--primary-color);
     margin-top: 2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 /* Social Section */
 .social {
-    padding: 5rem 0;
+    padding: 5rem 2rem;
     background: linear-gradient(135deg, var(--light-bg) 0%, #0f0f1e 100%);
 }
 
@@ -333,6 +364,7 @@ body {
 
 .social-btn span {
     font-size: 0.9rem;
+    text-align: center;
 }
 
 .social-btn.discord {
@@ -363,7 +395,7 @@ body {
 /* Footer */
 .footer {
     background: var(--secondary-color);
-    padding: 2rem 0;
+    padding: 2rem;
     text-align: center;
     border-top: 2px solid var(--primary-color);
     margin-top: 3rem;
@@ -372,40 +404,160 @@ body {
 .footer p {
     color: #aaa;
     margin: 0.5rem 0;
+    font-size: 0.95rem;
 }
 
 .footer i {
     color: var(--primary-color);
 }
 
+/* Music Control Button */
+.music-control {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.music-control:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
+}
+
+.music-control.playing {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #1a1a2e 100%);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        display: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid rgba(220, 20, 60, 0.2);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem 2rem;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 3rem 1.5rem;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .hero p {
         font-size: 1.2rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .logo {
-        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
     }
 
     .cta-buttons {
         flex-direction: column;
+        gap: 0.75rem;
     }
 
     .btn {
-        justify-content: center;
+        padding: 0.85rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .btn span {
+        display: inline;
+    }
+
+    .about {
+        padding: 3rem 1.5rem;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about > .container > p {
+        font-size: 1rem;
     }
 
     .features {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-card i {
+        font-size: 2rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+
+    .music {
+        padding: 3rem 1.5rem;
+    }
+
+    .music h2 {
+        font-size: 2rem;
+    }
+
+    .music-player {
+        margin: 1.5rem auto;
+        max-width: 100%;
+    }
+
+    .social {
+        padding: 3rem 1.5rem;
+    }
+
+    .social h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     .social-links {
@@ -415,6 +567,7 @@ body {
     .social-btn {
         width: 100px;
         height: 100px;
+        border-radius: 8px;
     }
 
     .social-btn i {
@@ -422,6 +575,81 @@ body {
     }
 
     .social-btn span {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .footer {
+        padding: 1.5rem;
+    }
+
+    .footer p {
+        font-size: 0.85rem;
+    }
+
+    .music-control {
+        width: 45px;
+        height: 45px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .about h2,
+    .music h2,
+    .social h2 {
+        font-size: 1.5rem;
+    }
+
+    .social-btn {
+        width: 85px;
+        height: 85px;
+    }
+
+    .social-btn i {
+        font-size: 1.2rem;
+    }
+
+    .social-btn span {
+        font-size: 0.7rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .music-player {
+        height: auto;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .footer,
+    .music-control {
+        display: none;
     }
 }
